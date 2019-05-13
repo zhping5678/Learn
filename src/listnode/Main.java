@@ -11,7 +11,7 @@ public class Main {
         one.next=two;
         two.next=three;
         three.next=four;
-        four.next=two;
+        four.next=null;
 
 //        ListNode one1=new ListNode(2);
 //        ListNode two1=new ListNode(4);
@@ -19,7 +19,9 @@ public class Main {
 //        listnode four1=new listnode(8);
 //        one1.next=two1;
 //        two1.next=three;
-        System.out.println(new EntryNodeOfLoopSolution().EntryNodeOfLoop(one).val);
+        ListNode node=new EntryNodeOfLoopSolution().EntryNodeOfLoop3(one);
+        System.out.println(node);
+//        System.out.println(new EntryNodeOfLoopSolution().EntryNodeOfLoop(one).val);
 
     }
 }

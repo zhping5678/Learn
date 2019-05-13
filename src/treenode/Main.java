@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args){
-        TreeNode root=new TreeNode(10);
-        TreeNode l1_1=new TreeNode(6);
-        TreeNode l1_2=new TreeNode(14);
+        TreeNode root=new TreeNode(5);
+        TreeNode l1_1=new TreeNode(3);
+        TreeNode l1_2=new TreeNode(7);
 
-        TreeNode l2_1=new TreeNode(4);
-        TreeNode l2_2=new TreeNode(8);
-        TreeNode l2_3=new TreeNode(12);
-        TreeNode l2_4=new TreeNode(16);
+        TreeNode l2_1=new TreeNode(2);
+        TreeNode l2_2=new TreeNode(4);
+        TreeNode l2_3=new TreeNode(6);
+        TreeNode l2_4=new TreeNode(8);
 
-        TreeNode l3_2=new TreeNode(9);
-        TreeNode l4_1=new TreeNode(1);
+//        TreeNode l3_2=new TreeNode(9);
+//        TreeNode l4_1=new TreeNode(1);
 
 
         root.left=l1_1;
@@ -26,12 +26,14 @@ public class Main {
         l1_2.left=l2_3;
         l1_2.right=l2_4;
 
-        l2_2.left=l3_2;
-        l3_2.right=l4_1;
+        System.out.println(new KthNodeSolution().KthNode(root,5).val);
 
-        System.out.println(new TreeDepth().TreeDepth_Solution1(root));
+//        l2_2.left=l3_2;
+//        l3_2.right=l4_1;
 
-//        ArrayList<ArrayList<Integer>> result=new PrintByLine().print(root);
+//        System.out.println(new TreeDepth().TreeDepth_Solution1(root));
+
+//        ArrayList<ArrayList<Integer>> result=new PrintZSolution().Print2(root);
 //        for(ArrayList<Integer> al:result){
 //            for(Integer i:al){
 //                System.out.print(i+" ");

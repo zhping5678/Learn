@@ -1,4 +1,4 @@
-package arrayOperator;
+package arrayOperator.slide_windows;
 
 import java.util.ArrayList;
 /*
