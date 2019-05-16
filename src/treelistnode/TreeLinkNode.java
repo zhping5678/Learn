@@ -1,4 +1,4 @@
-package treenode;
+package treelistnode;
 
 public class TreeLinkNode {
 

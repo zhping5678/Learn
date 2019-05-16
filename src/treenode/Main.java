@@ -5,14 +5,15 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args){
-        TreeNode root=new TreeNode(5);
-        TreeNode l1_1=new TreeNode(3);
-        TreeNode l1_2=new TreeNode(7);
+        TreeNode root=new TreeNode(8);
+        TreeNode l1_1=new TreeNode(6);
+        TreeNode l1_2=new TreeNode(10);
 
-        TreeNode l2_1=new TreeNode(2);
-        TreeNode l2_2=new TreeNode(4);
-        TreeNode l2_3=new TreeNode(6);
-        TreeNode l2_4=new TreeNode(8);
+        TreeNode l2_1=new TreeNode(5);
+        TreeNode l2_2=new TreeNode(7);
+        TreeNode l2_3=new TreeNode(9);
+        TreeNode l2_4=new TreeNode(11);
+
 
 //        TreeNode l3_2=new TreeNode(9);
 //        TreeNode l4_1=new TreeNode(1);
@@ -26,7 +27,20 @@ public class Main {
         l1_2.left=l2_3;
         l1_2.right=l2_4;
 
-        System.out.println(new KthNodeSolution().KthNode(root,5).val);
+//        l2_2.left=l3_2;
+//        l3_2.right=l4_1;
+
+//        System.out.println(new SerializeSolution().Serialize(root));
+        TreeNode result=new SerializeSolution().Deserialize("8 6 5 # # 7 # # 10 9 # # 11 # # ");
+
+        ArrayList<ArrayList<Integer>> r=new PrintByLine().Print(result);
+        for (ArrayList<Integer> a:r){
+            for (int i:a){
+                System.out.print(i+" ");
+            }
+            System.out.println();
+        }
+
 
 //        l2_2.left=l3_2;
 //        l3_2.right=l4_1;
