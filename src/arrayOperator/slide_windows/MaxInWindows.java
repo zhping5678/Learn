@@ -1,5 +1,6 @@
 package arrayOperator.slide_windows;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 
 
@@ -11,18 +12,37 @@ import java.util.ArrayList;
 */
 public class MaxInWindows {
 
-    public ArrayList<Integer> maxInWindows(int [] num, int size)
-    {
-        ArrayList<Integer> result=new ArrayList<>();
-        if(num==null||num.length==0||size<=0||size>num.length) return result;
-
-        int len=num.length;
-        int max=num[0];
-        int i=1;
-        for (; i<size;i++){
-            if (num[i]>max) max=num[i];
+    public static void main(String[] args){
+        int[] num={2,3,4,2,6,2,5,1};
+        int size=3;
+        ArrayList<Integer> maxs=maxInWindows(num, size);
+        for (int i:maxs){
+            System.out.print(i+" ");
         }
-        result.add(max);
-        return result;
+    }
+
+    public static ArrayList<Integer> maxInWindows(int [] num, int size)
+    {
+        ArrayList<Integer> res = new ArrayList<>();
+        if(size == 0) return res;
+        int begin;
+        ArrayDeque<Integer> q = new ArrayDeque<>();
+        for(int i = 0; i < num.length; i++){
+            begin = i - size + 1;//滑动窗口的首地址
+
+            //对于新来的元素K，从后向前一次删掉比k小的，因为不可能再成为滑动窗口的最大值
+            while (!q.isEmpty() && num[i]>=num[q.peekLast()]){
+                q.pollLast();
+            }
+            //判断队首元素是否过期
+            if (!q.isEmpty() && begin>q.peekFirst()){
+                q.pollFirst();
+            }
+            q.add(i);
+            //当滑动窗口首地址大于0时才加入结果队列
+            if(begin >= 0)
+                res.add(num[q.peekFirst()]);
+        }
+        return res;
     }
 }

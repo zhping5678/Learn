@@ -22,12 +22,4 @@ public class GetNextSolution {
         }
         return null;
     }
-
-    //前提是根节点不为空
-    private TreeLinkNode GetFirst(TreeLinkNode root){
-        //如果没有左子树，中序第一个节点就是根节点
-        if (root.left==null) return root;
-        //如果有左子树，第一个是左子树的中序第一个点
-        return GetFirst(root.left);
-    }
 }
